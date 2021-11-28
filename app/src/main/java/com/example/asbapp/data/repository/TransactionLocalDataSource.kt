@@ -16,7 +16,7 @@ class TransactionLocalDataSourceImpl @Inject constructor(
     override suspend fun getAllTransactions(): List<Transaction> =
         transactionDao.getAllTransactions().map {
             Transaction(
-                id = it.id!!,
+                id = it.id,
                 transactionDate = it.transactionDate,
                 summary = it.summary,
                 debit = it.debit,
