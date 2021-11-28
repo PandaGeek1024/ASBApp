@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.ui.DetailFragment">
+    <data>
+        <variable
+            name="transaction"
+            type="com.example.asbapp.domain.data.Transaction" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/page_margin"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{transaction.id}"
+            android:textAppearance="?attr/textAppearanceBody1" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{transaction.transactionDate}"
+            android:textAppearance="?attr/textAppearanceBody1" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{transaction.summary}"
+            android:textAppearance="?attr/textAppearanceBody1" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_light"
+            android:text="@{Double.toString(transaction.debit)}"
+            android:textAppearance="?attr/textAppearanceBody1" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_green_light"
+            android:text="@{Double.toString(transaction.credit)}"
+            android:textAppearance="?attr/textAppearanceBody1" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
